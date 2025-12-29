@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio CIEL - Le Podcast de la Filière</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap');
+
+        :root {
+            --brand-teal: #5eead4;
+            --brand-dark: #020617;
+            --brand-slate: #0f172a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-dark);
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .tech-gradient {
+            background: linear-gradient(135deg, #5eead4 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(94, 234, 212, 0.1);
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .section-padding {
+            padding: 6rem 1.5rem;
+        }
+
+        .expand-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .is-expanded .expand-content {
+            max-height: 1000px;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--brand-teal);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--brand-dark); }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--brand-teal); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-microphone-lines text-teal-400 text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight">STUDIO<span class="text-teal-400">CIEL</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6 text-sm font-medium text-slate-300">
+                        <a href="#concept" class="nav-link">Le Concept</a>
+                        <a href="#contenu" class="nav-link">Émissions</a>
+                        <a href="#organisation" class="nav-link">Organisation</a>
+                        <a href="#poles" class="nav-link">Les Pôles</a>
+                        <a href="#technique" class="nav-link">Technique</a>
+                        <a href="#inscription" class="bg-teal-500 text-slate-900 px-4 py-2 rounded-full font-bold hover:bg-teal-400 transition-all">S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-teal-500/10 text-teal-400 text-sm font-bold tracking-widest uppercase mb-6 border border-teal-500/20">
+                Portail Officiel du Podcast
+            </span>
+            <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                Donnez de la voix à votre <span class="tech-gradient">Filière CIEL</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed">
+                Rejoignez le premier média étudiant dédié à la Cybersécurité, l'Informatique embarquée et l'Électronique. Un projet national pour éclairer l'orientation et valoriser vos talents.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#inscription" class="px-8 py-4 bg-teal-500 text-slate-900 rounded-full font-bold text-lg shadow-lg shadow-teal-500/20 hover:scale-105 transition-all">
+                    Rejoindre l'équipe
+                </a>
+                <a href="#concept" class="px-8 py-4 bg-slate-800 text-white rounded-full font-bold text-lg hover:bg-slate-700 transition-all border border-slate-700">
+                    Découvrir le projet
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: LE CONCEPT -->
+    <section id="concept" class="section-padding max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6 border-l-4 border-teal-400 pl-6">Un média <span class="text-teal-400">Omniprésent</span></h2>
+                <p class="text-slate-400 mb-6 text-lg">
+                    Le <strong>Studio CIEL </strong>n'est pas un simple projet de classe. C'est un podcast diffusé sur toutes les grandes plateformes, visant à devenir la référence nationale pour la filière.
+                </p>
+                
+                <!-- Détails extensibles -->
+                <div class="glass-card p-6 mb-4" id="more-podcast">
+                    <button onclick="toggleExpand('more-podcast')" class="w-full flex justify-between items-center text-left font-bold text-teal-300">
+                        <span>Pourquoi ce format ?</span>
+                        <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                    </button>
+                    <div class="expand-content mt-4 text-slate-400 text-sm space-y-3">
+                        <p>Le podcast est le format roi de la mobilité. Il permet aux auditeurs (élèves, profs, parents) de s'informer pendant leurs trajets ou leurs moments de repos.</p>
+                        <p>Contrairement à la vidéo, l'audio favorise l'imagination et permet une écoute longue, idéale pour approfondir des sujets techniques comme le fonctionnement d'un réseau ou les enjeux de la cybersécurité.</p>
+                        <p><strong>C'est aussi un vecteur de fierté :</strong> entendre son travail diffusé sur les mêmes plateformes que les plus grands artistes mondiaux renforce l'appartenance à notre filière.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="aspect-square bg-slate-900 rounded-2xl flex flex-col items-center justify-center p-6 border border-slate-800 shadow-xl group hover:border-teal-500/50 transition-colors">
+                    <i class="fa-brands fa-spotify text-4xl text-[#1DB954] mb-4"></i>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">Disponible sur</span>
+                    <span class="text-sm font-bold">Spotify</span>
+                </div>
+                <div class="aspect-square bg-slate-900 rounded-2xl flex flex-col items-center justify-center p-6 border border-slate-800 shadow-xl group hover:border-teal-500/50 transition-colors">
+                    <i class="fa-brands fa-apple text-4xl text-white mb-4"></i>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">Disponible sur</span>
+                    <span class="text-sm font-bold">Apple Podcasts</span>
+                </div>
+                <div class="aspect-square bg-slate-900 rounded-2xl flex flex-col items-center justify-center p-6 border border-slate-800 shadow-xl group hover:border-teal-500/50 transition-colors">
+                    <i class="fa-brands fa-deezer text-4xl text-white mb-4"></i>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">Disponible sur</span>
+                    <span class="text-sm font-bold">Deezer</span>
+                </div>
+                <div class="aspect-square bg-slate-900 rounded-2xl flex flex-col items-center justify-center p-6 border border-slate-800 shadow-xl group hover:border-teal-500/50 transition-colors">
+                    <i class="fa-solid fa-rss text-4xl text-orange-400 mb-4"></i>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">Standard</span>
+                    <span class="text-sm font-bold">Flux RSS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: LIGNE ÉDITORIALE -->
+    <section id="contenu" class="section-padding bg-slate-900/30">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Nos <span class="text-teal-400">Émissions</span> types</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card p-8 flex flex-col h-full">
+                    <div class="w-12 h-12 bg-teal-500/10 rounded-xl flex items-center justify-center text-teal-400 mb-6">
+                        <i class="fa-solid fa-compass text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Boussole Parcoursup</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">L'orientation vue par ceux qui la vivent. On interviewe des étudiants en BTS CIEL, BUT GEII ou licences pro pour comprendre les débouchés réels.</p>
+                    <button onclick="toggleExpand('exp-1')" id="exp-1" class="text-teal-400 font-bold text-xs uppercase tracking-tighter hover:underline">
+                        Détails de la rubrique +
+                    </button>
+                    <div class="expand-content mt-4 text-xs text-slate-500 space-y-2">
+                        <p><strong>Format :</strong> Entretien de 10-15 minutes.</p>
+                        <p><strong>Cible :</strong> Élèves de Première et Terminale.</p>
+                        <p><strong>Sujets :</strong> Dossiers Parcoursup, alternance vs initial, niveau de maths attendu, vie étudiante.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card p-8 flex flex-col h-full">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 mb-6">
+                        <i class="fa-solid fa-user-tie text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Focus Métier (Real Talk)</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">On donne la parole aux pros. Tuteurs de stage, anciens élèves en poste ou experts du secteur parlent de leur quotidien sans filtre.</p>
+                    <button onclick="toggleExpand('exp-2')" id="exp-2" class="text-teal-400 font-bold text-xs uppercase tracking-tighter hover:underline">
+                        Détails de la rubrique +
+                    </button>
+                    <div class="expand-content mt-4 text-xs text-slate-500 space-y-2">
+                        <p><strong>Format :</strong> Interview reportage.</p>
+                        <p><strong>Sujets :</strong> Cybersécurité, maintenance industrielle, déploiement réseaux, électronique de pointe.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card p-8 flex flex-col h-full">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 mb-6">
+                        <i class="fa-solid fa-microchip text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">La Veille Tech</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">Décryptage des innovations majeures. IA générative, IoT, nouveaux composants... On explique comment ça marche et pourquoi c'est important.</p>
+                    <button onclick="toggleExpand('exp-3')" id="exp-3" class="text-teal-400 font-bold text-xs uppercase tracking-tighter hover:underline">
+                        Détails de la rubrique +
+                    </button>
+                    <div class="expand-content mt-4 text-xs text-slate-500 space-y-2">
+                        <p><strong>Format :</strong> Chronique solo ou duo de 5 minutes.</p>
+                        <p><strong>Objectif :</strong> Culture technologique pour les examens et le milieu professionnel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: ORGANISATION -->
+    <section id="organisation" class="section-padding max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold mb-4 text-center">Organisation : <span class="text-teal-400">8h / Mois</span></h2>
+        <p class="text-center text-slate-400 mb-12">Un workflow professionnel structuré en 4 semaines pour un épisode final impeccable.</p>
+        
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="relative p-6 glass-card border-t-4 border-teal-500">
+                <div class="absolute -top-4 left-6 bg-teal-500 text-slate-900 font-bold px-3 py-1 rounded text-sm">Semaine 1</div>
+                <h4 class="font-bold text-lg mt-2 mb-3">Éditorial</h4>
+                <p class="text-xs text-slate-400">On se retrouve autour d'un repas (Mardi/Jeudi 12h-13h). Choix des sujets, recherches et rédaction des premières lignes des scripts.</p>
+            </div>
+            <div class="relative p-6 glass-card border-t-4 border-teal-500">
+                <div class="absolute -top-4 left-6 bg-teal-500 text-slate-900 font-bold px-3 py-1 rounded text-sm">Semaine 2</div>
+                <h4 class="font-bold text-lg mt-2 mb-3">Captation</h4>
+                <p class="text-xs text-slate-400">Installation de la régie. Enregistrement des rubriques individuelles et des interviews. Collecte des sons d'ambiance.</p>
+            </div>
+            <div class="relative p-6 glass-card border-t-4 border-teal-500">
+                <div class="absolute -top-4 left-6 bg-teal-500 text-slate-900 font-bold px-3 py-1 rounded text-sm">Semaine 3</div>
+                <h4 class="font-bold text-lg mt-2 mb-3">Le Plateau</h4>
+                <p class="text-xs text-slate-400">Le grand enregistrement en "conditions du direct". On réunit l'équipe pour enregistrer les lancements et les débats.</p>
+            </div>
+            <div class="relative p-6 glass-card border-t-4 border-teal-500">
+                <div class="absolute -top-4 left-6 bg-teal-500 text-slate-900 font-bold px-3 py-1 rounded text-sm">Semaine 4</div>
+                <h4 class="font-bold text-lg mt-2 mb-3">Mastering</h4>
+                <p class="text-xs text-slate-400">Nettoyage audio, mixage des musiques, traitement IA et mise en ligne sur les plateformes de streaming.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: LES PÔLES -->
+    <section id="poles" class="section-padding bg-slate-900/30">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Choisissez votre <span class="text-teal-400">Pôle</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pôle Tech -->
+                <div class="glass-card overflow-hidden group">
+                    <div class="h-48 bg-teal-500/20 flex items-center justify-center">
+                        <i class="fa-solid fa-headset text-6xl text-teal-400 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4">Pôle Technique</h3>
+                        <p class="text-sm text-slate-400 mb-6">Les architectes du son. Vous gérez le matériel, le mixage et la diffusion numérique.</p>
+                        <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                            <li>• Paramétrage de la console de mixage</li>
+                            <li>• Traitement du signal (EQ, Compression)</li>
+                            <li>• Maintenance du matériel du studio</li>
+                            <li>• Montage sur DAW (Logiciels pro)</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Pôle Édito -->
+                <div class="glass-card overflow-hidden group">
+                    <div class="h-48 bg-blue-500/20 flex items-center justify-center">
+                        <i class="fa-solid fa-microphone-alt text-6xl text-blue-400 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4">Pôle Éditorial</h3>
+                        <p class="text-sm text-slate-400 mb-6">Les visages du projet. Vous cherchez l'info, écrivez les scripts et animez les émissions.</p>
+                        <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                            <li>• Animation & Interviews</li>
+                            <li>• Veille technologique approfondie</li>
+                            <li>• Rédaction de scripts dynamiques</li>
+                            <li>• Recherche d'invités (professionnels)</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Pôle Com -->
+                <div class="glass-card overflow-hidden group">
+                    <div class="h-48 bg-purple-500/20 flex items-center justify-center">
+                        <i class="fa-solid fa-share-nodes text-6xl text-purple-400 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-4">Pôle Communication</h3>
+                        <p class="text-sm text-slate-400 mb-6">Les stratèges du buzz. Vous faites connaître le podcast à travers la France entière.</p>
+                        <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                            <li>• Création de teasers TikTok / Insta</li>
+                            <li>• Graphisme (Pochettes d'épisodes)</li>
+                            <li>• Community Management</li>
+                            <li>• Relations avec les autres lycées</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: TECHNIQUE & IA -->
+    <section id="technique" class="section-padding max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+            <div class="flex-1">
+                <h2 class="text-4xl font-bold mb-8 border-l-4 border-teal-400 pl-6">L'Expertise du <span class="text-teal-400">Studio CIEL</span></h2>
+                <p class="text-slate-400 mb-8">
+                    Le <strong>Studio CIEL</strong> n'est pas qu'un loisir, c'est un laboratoire d'innovation. On y applique les principes fondamentaux de notre filière de manière créative.
+                </p>
+                <div class="space-y-4">
+                   <div class="p-4 glass-card flex gap-4 border-l-4 border-teal-500">
+                        <i class="fa-solid fa-toolbox text-teal-400 text-xl"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">Gestion & Maintenance Matérielle</h4>
+                            <p class="text-xs text-slate-500">Mise en œuvre d'une régie complète : microphones à condensateur, interfaces XLR, gestion de l'impédance et du câblage structuré.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 glass-card flex gap-4 border-l-4 border-blue-500">
+                        <i class="fa-solid fa-wave-square text-blue-400 text-xl"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">Traitement Numérique du Signal</h4>
+                            <p class="text-xs text-slate-500">Analyse fréquentielle, filtrage actif, et gestion de la dynamique (compression, normalisation LUFS) pour un rendu professionnel.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 glass-card flex gap-4 border-l-4 border-purple-500">
+                        <i class="fa-solid fa-server text-purple-400 text-xl"></i>
+                        <div>
+                            <h4 class="font-bold text-sm">Architecture de Diffusion Web</h4>
+                            <p class="text-xs text-slate-500">Configuration de flux RSS, gestion de serveurs d'hébergement audio et déploiement de métadonnées sur les plateformes mondiales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 glass-card p-10 bg-gradient-to-br from-slate-900 to-slate-950">
+                <h3 class="text-2xl font-bold mb-6">Bonus : <span class="text-teal-400">Parcoursup & CV</span></h3>
+                <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                    Avoir été membre fondateur ou contributeur régulier du <strong>Studio CIEL</strong> et donc d'un podcast d'envergure national est un argument massue pour vos dossiers. 
+                </p>
+                <ul class="text-xs text-slate-500 space-y-4">
+                    <li class="flex gap-3 items-center">
+                        <i class="fa-solid fa-check-circle text-teal-400"></i>
+                        Preuve d'autonomie et d'esprit d'initiative.
+                    </li>
+                    <li class="flex gap-3 items-center">
+                        <i class="fa-solid fa-check-circle text-teal-400"></i>
+                        Maîtrise de compétences transversales (Com, Tech, Gestion).
+                    </li>
+                    <li class="flex gap-3 items-center">
+                        <i class="fa-solid fa-check-circle text-teal-400"></i>
+                        Entraînement intensif pour l'épreuve du Grand Oral.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION FINALE: INSCRIPTION -->
+    <section id="inscription" class="section-padding bg-teal-500">
+        <div class="max-w-4xl mx-auto text-slate-900 text-center">
+            <h2 class="text-5xl font-bold mb-6 italic">REJOINS LE STUDIO !</h2>
+            <p class="text-lg font-medium mb-12 opacity-90">
+                Nous recherchons des passionnés ou juste des personnes intriguées pour former l'équipe de production dès ce mois-ci. 
+                Toutes les filières sont les bienvenues, mais les postes techniques sont réservés en priorité aux CIEL.
+            </p>
+            
+            <div class="bg-white/10 backdrop-blur-sm p-10 rounded-3xl border border-white/20 text-left mb-12 shadow-2xl">
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    Ce que vous allez choisir dans le formulaire :
+                </h3>
+                <div class="grid sm:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-bold text-sm uppercase mb-2">1. Votre Pôle Préféré</h4>
+                        <p class="text-sm opacity-80 italic">Tech, Édito ou Communication ? Vous pouvez aussi être polyvalent.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm uppercase mb-2">2. Votre Disponibilité</h4>
+                        <p class="text-sm opacity-80 italic">Les créneaux sont le Mardi et Jeudi de 12h à 13h. Précisez combien de fois par mois vous souhaitez participer.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm uppercase mb-2">3. Tes Intérêts et Motivations</h4>
+                        <p class="text-sm opacity-80 italic">Tu as des intérêts pour quelque chose en particulier ou des compétences particulières?</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-PFKhXpEl3FJb-vyeF_2Ub0DkIDlg8hc6WeNAY3H1NJC-Fg/viewform?usp=dialog" target="_blank" class="inline-block px-12 py-6 bg-slate-950 text-white rounded-full font-bold text-2xl hover:bg-slate-900 transition-all shadow-2xl hover:scale-105">
+                Remplir le Formulaire d'Inscription
+            </a>
+    
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-slate-900 text-center text-slate-600">
+
+        <p class="text-sm">© 2025 - Studio CIEL - Made with ❤️ by Alix Boufflers, pour les élèves du lycée Saint-Charles à Rilleux-la-Pape</p>
+    </footer>
+
+    <script>
+        // Fonction pour gérer l'accordéon / expand
+        function toggleExpand(id) {
+            const container = id === 'more-podcast' ? document.getElementById(id) : document.getElementById(id).parentElement;
+            container.classList.toggle('is-expanded');
+            
+            // Animation de l'icône si présente
+            const icon = container.querySelector('.fa-plus, .fa-minus');
+            if (icon) {
+                icon.classList.toggle('fa-plus');
+                icon.classList.toggle('fa-minus');
+            }
+        }
+
+        // Smooth Scroll pour la navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
